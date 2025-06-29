@@ -1,0 +1,164 @@
+$color-text: #333;
+$color-background: #fff;
+$color-text-title: #e77e23;
+$color-border: #000;
+$text-size: 16px;
+$text-size-title: 18px;
+
+.footer {
+  background-color: $color-background;
+  color: $color-text;
+  margin: 100px auto 0 auto;
+  padding: 40px 16px;
+
+  gap: 2rem;
+  max-width: 1340px;
+
+  &__top {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 40px 0;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    padding: 20px 0;
+    color: #333;
+
+    a {
+      color: $color-text;
+      text-decoration: none;
+      &:hover {
+        color: #e77e23;
+      }
+    }
+  }
+
+  &__bottom-secondary {
+    font-size: 12px;
+  }
+
+  &__brand {
+    flex: 0 0 150px;
+  }
+
+  &__logo {
+    height: 30px;
+  }
+
+  &__text {
+    font-size: $text-size;
+    margin-bottom: 2rem;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__social-link {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #e77e23;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      border-color 0.3s,
+      background-color 0.3s;
+
+    &:hover {
+      border-color: #e77f23c1;
+      background-color: #e77f23c1;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+  }
+
+  &__text-title {
+    color: $color-text-title;
+    font-size: $text-size-title;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  &__contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    span {
+      font-size: $text-size;
+      color: $color-text;
+    }
+  }
+
+  &__location {
+    margin-top: 0.5rem;
+  }
+
+  &__location-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__location-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__location-text {
+    font-weight: bold;
+    color: $color-text;
+  }
+
+  &__location-address {
+    color: $color-text;
+    font-size: $text-size;
+    line-height: 1.4;
+    padding-left: 30px;
+  }
+
+  &__nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem 2rem;
+    width: max-content;
+
+    a {
+      color: $color-text;
+      text-decoration: none;
+      &:hover {
+        color: #e77e23;
+      }
+    }
+  }
+}

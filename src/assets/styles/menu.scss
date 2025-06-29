@@ -1,0 +1,332 @@
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 100px 20px 0;
+  max-width: 1340px;
+  background-color: white;
+  color: #e77e23;
+  font-size: 25px;
+  font-weight: bold;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+
+  // Modal
+  &__modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  &__modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 300px;
+    text-align: center;
+
+    img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1 rem;
+    }
+
+    p {
+      font-size: 16px;
+      color: #333;
+    }
+
+    button {
+      background: #e77e23;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      cursor: pointer;
+      min-width: 250px;
+      text-align: center;
+
+      &:hover {
+        background: #e77f23c1;
+      }
+    }
+  }
+
+  &__order-title {
+    font-weight: bold;
+    color: #000;
+  }
+
+  // Choose Pizza
+  &__choose-pizza-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0rem;
+    margin-top: 20px;
+    margin-bottom: 100px;
+
+    & > div {
+      @media (max-width: 992px) {
+        width: 95%;
+      }
+    }
+  }
+  &__choose-pizza {
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: left;
+    width: 300px;
+    height: 150px;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    box-sizing: border-box;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+
+    label {
+      cursor: pointer;
+      display: flex;
+      flex: 1;
+      align-items: left;
+      gap: 1rem;
+      position: relative;
+      font-size: 16px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    input[type='radio'] {
+      display: none;
+    }
+
+    img.menu__pizza-image {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      transition: transform 1s ease;
+    }
+
+    img.menu__offer-image {
+      width: 100px;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &-content {
+      flex: 2;
+      margin-left: 20px;
+
+      strong {
+        font-weight: 700;
+        font-size: 16px;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+
+    &:has(input[type='radio']:checked) {
+      background: #e77e23;
+      color: #fff;
+      border-color: #e77e23;
+    }
+
+    &:hover {
+      background-color: #e6944d7b;
+      color: #fff;
+      border-color: #e6944d7b;
+    }
+
+    &:hover img.menu__pizza-image {
+      transform: rotate(45deg);
+    }
+  }
+
+  // Pizza Size
+  &__size-title {
+    color: #000;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  &__size-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    color: black;
+    font-size: 18px;
+
+    lebel {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+
+  &__size-price {
+    color: #ccc;
+  }
+
+  // Pizza Topping
+  &__topping-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  &__topping-menu {
+    flex: 0 0 calc(16.66% - 0.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    border-radius: 999px;
+    background: #fff;
+    cursor: pointer;
+    color: #000;
+    transition: all 0.3s ease;
+    min-width: 70px;
+    text-align: center;
+    font-size: 14px;
+
+    label {
+      font-weight: bold;
+      padding: 0.5rem 0.5rem;
+      cursor: pointer;
+      width: 100%;
+      height: 100%;
+    }
+
+    input[type='checkbox'] {
+      display: none;
+    }
+
+    &.disabled {
+      background-color: #e0e0e0;
+      color: #aaa;
+      border-color: #ccc;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &:not(.disabled):hover {
+      background: #fff;
+      color: #e77e23;
+      border-color: #e77e23;
+    }
+
+    &.menu__topping-menu--selected,
+    &.menu__topping-menu--selected:hover {
+      background: #e6944d7b !important;
+      color: #e77e23 !important;
+      border-color: #e77e23 !important;
+    }
+  }
+
+  // Payment Summary
+  &__payment-summary {
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    margin-top: 2rem;
+    margin-right: 30px;
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: #e77e23;
+      font-weight: bold;
+    }
+
+    p,
+    li,
+    span {
+      color: #333;
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 0;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    button {
+      margin-top: 1rem;
+      width: 100%;
+      background: #e77e23;
+      color: white;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 2rem;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background: #e77f23c1;
+      }
+    }
+  }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  &__total-price {
+    color: #e77e23;
+    font-weight: bold;
+  }
+
+  &__discount {
+    text-decoration-line: line-through;
+    color: #ccc;
+  }
+}

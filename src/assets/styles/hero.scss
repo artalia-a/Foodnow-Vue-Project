@@ -1,0 +1,36 @@
+.hero {
+  background-image: url('../images/hero.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh;
+  margin-top: -64px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+
+  @media (max-width: 992px) {
+    min-height: 40vh;
+  }
+}
+
+.hero__content {
+  z-index: 2;
+  color: #e77e23;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Efek gelap di atas gambar */
+  z-index: 1;
+}
