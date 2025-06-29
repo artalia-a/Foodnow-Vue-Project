@@ -196,7 +196,7 @@ const PizzaImage = {
       <!-- Show the total price and order button  -->
       <div v-if="total">
         <p class="menu__total">
-          <span>Total Price</span> <span class="menu__total-price">${{ total }}</span>
+          <span>Total Price</span><span>${{ total }}</span>
         </p>
 
         <button @click="placeOrder">Order Now</button>

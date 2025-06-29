@@ -184,10 +184,47 @@
     color: black;
     font-size: 18px;
 
-    lebel {
+    label {
       display: flex;
       align-items: center;
       cursor: pointer;
+      gap: 0.5rem;
+    }
+
+    input[type='radio'] {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      width: 18px;
+      height: 18px;
+      border: 2px solid #a8a7a7;
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      background: transparent;
+
+      display: grid;
+      place-content: center;
+
+      &:checked {
+        border-color: #e77e23;
+        background-color: #fff;
+      }
+
+      &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #e77e23;
+        transform: scale(0);
+        transition: transform 0.2s ease;
+      }
+
+      &:checked::before {
+        transform: scale(1);
+      }
     }
   }
 
@@ -315,14 +352,15 @@
     justify-content: space-between;
     padding-top: 20px;
 
-    p {
+    span:first-child {
       font-size: 20px;
     }
-  }
 
-  &__total-price {
-    color: #e77e23;
-    font-weight: bold;
+    span:nth-child(2) {
+      color: #e77e23;
+      font-weight: bold;
+      font-size: 20px;
+    }
   }
 
   &__discount {
