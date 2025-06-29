@@ -12,6 +12,7 @@ import Location from '@/assets/images/icons/location.svg'
 <template>
   <footer class="footer">
     <div class="footer__top">
+      <!-- Brand section with logo and social media icons -->
       <div class="footer__brand">
         <img :src="Logo" alt="Foodnow logo" class="footer__logo" />
         <p class="footer__text-title">Find Us:</p>
@@ -27,7 +28,7 @@ import Location from '@/assets/images/icons/location.svg'
           </a>
         </div>
       </div>
-
+      <!-- Navigation links section -->
       <div>
         <h4 class="footer__text-title">Navigation</h4>
         <ul class="footer__nav-list">
@@ -40,7 +41,7 @@ import Location from '@/assets/images/icons/location.svg'
           <li><router-link to="/blog">Blog</router-link></li>
         </ul>
       </div>
-
+      <!-- Contact information section -->
       <div>
         <h4 class="footer__text-title">Contact</h4>
         <div class="footer__contact-item">
@@ -56,7 +57,7 @@ import Location from '@/assets/images/icons/location.svg'
           <span>+62 878 1234 5678</span>
         </div>
       </div>
-
+      <!-- Location information section -->
       <div>
         <h4 class="footer__text-title">Location</h4>
         <div class="footer__location">
